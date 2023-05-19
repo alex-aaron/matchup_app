@@ -20,3 +20,8 @@ const movies = [
     "Shallow Grave", 
     "Home Alone"
   ];
+
+  let results = movies.reduce((acc, current) => {
+    acc[current] = { wins: 0, losses: 0, opponents: [] };
+    return acc;
+  }, {});

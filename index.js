@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let movieInput = document.getElementById('movie-input');
     let movieFormSubmit = document.getElementById('movie-input-submit');
 
+    console.log(results);
+    
     movieForm.addEventListener('submit', (e) => {
         e.preventDefault();
         handleMovieSubmit(movieInput.value);
@@ -10,5 +12,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function handleMovieSubmit(movie){
-    // generate a card to vote on a matchup
+    // select random movie to pair against
 }
