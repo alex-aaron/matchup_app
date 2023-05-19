@@ -3,14 +3,26 @@ document.addEventListener('DOMContentLoaded', () => {
     let movieInput = document.getElementById('movie-input');
     let movieFormSubmit = document.getElementById('movie-input-submit');
 
-    console.log(results);
-    
+    renderTable();
+
     movieForm.addEventListener('submit', (e) => {
         e.preventDefault();
         handleMovieSubmit(movieInput.value);
     });
 });
 
+let matchups = document.getElementById('matchup-container');
+
 function handleMovieSubmit(movie){
-    // select random movie to pair against
+    let opp = generateRandomOpponent(movies, movie);
+
+    let matchup = generateMatchupCard(movie, opp);
+
+    matchups.append(matchup);
+}
+
+function renderTable(){
+    let tableContainer = document.getElementById('results-card');
+    let table = createTable(results);
+    tableContainer.append(table);
 }
